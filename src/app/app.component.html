@@ -1,0 +1,21 @@
+<ft-sidenav #sidenav labelField="label" [options]="options" [docked]="true" [ngClass]="{'primary-shown':comboboxExpanded}">
+  <div ftStart>
+    <div class="combobox" [ngClass]="{show:comboboxExpanded}">
+      <button type="button" class="combobox-item btn w-100 text-left rounded-0" [ngClass]="{active: book==selectedBook}" (click)="toggleCombobox(book)" *ngFor="let book of books">
+        <div>{{ book.label }}</div>
+      </button>
+      <ft-icon class="combobox-toggle" name="angle-expand" size="1" style="position: absolute; top: 50%; margin-top: -8px; color: #FFF;"></ft-icon>
+    </div>
+  </div>
+</ft-sidenav>
+<div class="content" [ngClass]="{'left-sidenav': sidenav.docked}">
+  <router-outlet></router-outlet>
+  <footer class="p-3 p-md-5 text-muted text-center text-small">
+    <p class="mb-1">© 2017-2019 Factor</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>

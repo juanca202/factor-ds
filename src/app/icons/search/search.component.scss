@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+.d-grid {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  &.grid-md {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  &.grid-lg {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  &.grid-xl {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+ft-icon {
+  transition: font-size .2s;
+  &.icon-md {
+    font-size: 24px;
+  }
+  &.icon-lg {
+    font-size: 48px;
+  }
+  &.icon-xl {
+    font-size: 72px;
+  }
+}
+.icons {
+  > .card {
+    color: $body-color;
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}

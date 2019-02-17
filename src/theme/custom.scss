@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+body,
+html {
+  font-family: 'Quicksand', sans-serif;
+}
+.d-grid {
+  display: grid;
+  grid-gap: 0.5rem;
+}
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-col-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.grid-col-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.grid-col-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.grid-col-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+.grid-col-10 {
+  grid-template-columns: repeat(10, 1fr);
+}

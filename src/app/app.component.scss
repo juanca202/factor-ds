@@ -1,0 +1,80 @@
+@import "variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+ft-sidenav {
+  .sidenav-brand {
+    background-color: rgba(43, 132, 238, .05);
+  }
+  .sidenav-header {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+  }
+  /deep/.list-group {
+    transition: opacity .3s;
+  }
+  &.primary-shown {
+    /deep/.list-group {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}
+.combobox {
+  position: relative;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s;
+  > .combobox-item {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s, background-color .4s, color .4s;
+    font-size: 1.125rem;
+    margin: 0;
+    display: block;
+    border: 0;
+    padding: 0;
+    background-color: $primary;
+    color: #FFF;
+    &:focus {
+      box-shadow: 0 0;
+    }
+    &.active {
+      max-height: 51px;
+      background-color: $primary;
+      color: #FFF;
+    }
+    > div {
+      padding: 0.75rem 1.25rem;
+    }
+  }
+  > .combobox-toggle {
+    position: absolute;
+    right: 1.25rem;
+    opacity: 1;
+    transition: opacity .2s linear .2s;
+  }
+  &.show {
+    > .combobox-item {
+      max-height: 100vh;
+      background-color: transparent;
+      color: $body-color;
+      &.active {
+        background-color: rgba(0,0,0,.02);
+        color: $primary;
+      }
+    }
+    > .combobox-toggle {
+      opacity: 0;
+      transition: none;
+    }
+    border-color: rgba(33,37,41,.1);
+  }
+}
+.content {
+  &.left-sidenav {
+    @include media-breakpoint-up(md) {
+      margin-left: 16rem;
+    }
+  }
+}
