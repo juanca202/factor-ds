@@ -2579,10 +2579,17 @@ factor-common@^0.0.11:
   dependencies:
     tslib "^1.9.0"
 
-factor-navigation@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.11.tgz#ca942b6ee7dfc4dc8d9a6cdc264a5fb70b42b7cc"
-  integrity sha512-YnyCtjhgPE9NXOKdd0s59T8pQaGXM6QmevaU6FmZUaI1Oy9OZ6/yYCtauo25XaH5RqcU6CLDwdkifebGNzDRdw==
+factor-inputs@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/factor-inputs/-/factor-inputs-0.0.14.tgz#3667ca3de46fdf4e48da268efcfb5c3a66e554d0"
+  integrity sha512-jbdYv/iqDnRPmipP0m7awwO95lBHlfvJEIeE5kVnn7IBKZpMZEdrhqWW5MV/UBAjFtf4tyUpdUpWAgrPyAIdjg==
+  dependencies:
+    tslib "^1.9.0"
+
+factor-navigation@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.12.tgz#635782e1d8e20f30b0e020d3ba083a4d3260839b"
+  integrity sha512-coz1CMXaVfqUHU+iQDT9ho0yb5snrrlMDd0ZhUSVhi2n/wMTB5ViQmI+pfwrxooTpq6y1pmkLUEnW03Vpf/rRQ==
   dependencies:
     tslib "^1.9.0"
 

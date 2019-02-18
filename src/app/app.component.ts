@@ -41,6 +41,10 @@ export class AppComponent implements OnInit {
               url: '/guidelines/typography'
             },
             {
+              label: 'Motion',
+              url: '/guidelines/motion'
+            },
+            {
               label: 'Icons',
               url: '/icons'
             }
@@ -97,24 +101,28 @@ export class AppComponent implements OnInit {
           type: 'collapsible',
           children: [
             {
-              label: 'Workflow task',
-              url: '/templates/workflow-task'
+              label: 'Starter page',
+              url: '/templates/page'
             },
             {
-              label: 'Search',
-              url: '/templates/search'
+              label: 'Basic form',
+              url: '/templates/basic-form'
             },
             {
               label: 'Login',
               url: '/templates/login'
             },
             {
-              label: 'Wizard',
-              url: '/templates/wizard'
+              label: 'Search',
+              url: '/templates/search'
             },
             {
-              label: 'Style guide',
-              url: '/templates/style-guide'
+              label: 'Workflow task',
+              url: '/templates/workflow-task'
+            },
+            {
+              label: 'Wizard',
+              url: '/templates/wizard'
             }
           ]
         }

@@ -1,30 +1,30 @@
-<div class="container p-5">
+<div class="container p-4 p-md-5">
   <div class="small text-muted">Guidelines</div>
   <h1>Typography</h1>
   <p class="lead">Our brand font is Mark and comes in two weights, 400 and 700. We have five “title” variations used for headings and three “body” sizes used for body copy.</p>
   <div class="text-center row my-5">
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body" style="font-weight: 300; font-size: 2rem;">Light 300</div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body" style="font-weight: 400; font-size: 2rem;">Regular 400</div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body" style="font-weight: 500; font-size: 2rem;">Medium 500</div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body" style="font-weight: 700; font-size: 2rem;">Bold 700</div>
       </div>
     </div>
   </div>
-  <div class="d-flex">
+  <div class="d-md-flex">
     <div class="mr-5 mt-n3">
       <div class="display-1 text-nowrap">Display 1</div>
       <div class="display-2 text-nowrap">Display 2</div>
@@ -54,4 +54,7 @@
       <div class="small" style="font-weight: 700;">Small</div>
     </div>
   </div>
+  <h2 class="mt-5">Responsive font sizes</h2>
+  <p>Bootstrap v4.3 ships with the option to enable responsive font sizes, allowing text to scale more naturally across device and viewport sizes. RFS can be enabled by changing the $enable-responsive-font-sizes Sass variable to true and recompiling Bootstrap.</p>
+  <p>To support RFS, we use a Sass mixin to replace our normal font-size properties. Responsive font sizes will be compiled into calc() functions with a mix of rem and viewport units to enable the responsive scaling behavior. More about RFS and its configuration can be found on its GitHub repository.</p>
 </div>

@@ -1,5 +1,7 @@
-<nav class="navbar navbar-light bg-light sticky-top">
-  <form class="form-inline w-100">
+<div class="container p-5">
+  <div class="small text-muted">Guidelines</div>
+  <h1>Icons search</h1>
+  <form class="form-inline w-100 mb-5 sticky-top py-2 bg-white">
     <input class="form-control flex-grow-1 mr-2" type="search" placeholder="Search" />
     <div class="btn-group mr-2">
       <button type="button" class="btn btn-secondary" [ngClass]="{active:state.size==size}" (click)="setSize(size)" *ngFor="let size of sizes">{{ size.label }}</button>
@@ -17,14 +19,14 @@
       </div>
     </div>
   </form>
-</nav>
-<div class="icons d-grid m-5" [ngClass]="'grid-'+state.size.value">
-  <ng-container *ngFor="let icon of icons">
-    <a href="#" class="card" *ngIf="!state.category || icon.categories.indexOf(state.category)>=0">
-      <div class="card-body p-2 d-flex flex-column align-items-center justify-content-center">
-        <ft-icon [name]="icon.name" [collection]="'factoricons-'+state.style" [ngClass]="'icon-'+state.size.value"></ft-icon>
-        <div class="small text-muted">{{ icon.name }}</div>
-      </div>
-    </a>
-  </ng-container>
+  <div class="icons d-grid" [ngClass]="'grid-'+state.size.value">
+    <ng-container *ngFor="let icon of icons">
+      <a href="#" class="card" *ngIf="!state.category || icon.categories.indexOf(state.category)>=0">
+        <div class="card-body p-2 d-flex flex-column align-items-center justify-content-center">
+          <ft-icon [name]="icon.name" [collection]="'factoricons-'+state.style" [ngClass]="'icon-'+state.size.value"></ft-icon>
+          <div class="small text-muted">{{ icon.name }}</div>
+        </div>
+      </a>
+    </ng-container>
+  </div>
 </div>

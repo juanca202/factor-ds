@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule as FactorCommonModule } from 'factor-common';
 import { NavigationModule } from 'factor-navigation';
+import { InputsModule } from 'factor-inputs';
 
 import { CoreModule } from './core/core.module';
 import { IconsModule } from './icons/icons.module';
@@ -19,6 +21,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([], {
       scrollPositionRestoration: 'enabled'
     }),

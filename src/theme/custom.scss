@@ -37,3 +37,12 @@ html {
 .grid-col-10 {
   grid-template-columns: repeat(10, 1fr);
 }
+.page-navigation,
+.page-actions {
+  .btn {
+    color: $primary;
+    &:hover {
+      background-color: $light;
+    }
+  }
+}

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { StyleGuideComponent } from './style-guide/style-guide.component';
+import { BasicFormComponent } from './basic-form/basic-form.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'templates/style-guide', component: StyleGuideComponent }
+  { path: 'templates/basic-form', component: BasicFormComponent },
+  { path: 'templates/login', component: LoginComponent }
 ];
 
 @NgModule({

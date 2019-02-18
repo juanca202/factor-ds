@@ -1,14 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { CommonModule as FactorCommonModule } from 'factor-common';
+import { NavigationModule } from 'factor-navigation';
+import { InputsModule } from 'factor-inputs';
 import { TemplatesRoutingModule } from './templates-routing.module';
-import { StyleGuideComponent } from './style-guide/style-guide.component';
+import { BasicFormComponent } from './basic-form/basic-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [StyleGuideComponent],
+  declarations: [
+    BasicFormComponent,
+    LoginComponent
+  ],
   imports: [
     CommonModule,
-    TemplatesRoutingModule
+    TemplatesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputsModule,
+    FactorCommonModule,
+    NavigationModule
   ]
 })
 export class TemplatesModule { }

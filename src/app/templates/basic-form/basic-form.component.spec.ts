@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StyleGuideComponent } from './style-guide.component';
+import { BasicFormComponent } from './basic-form.component';
 
-describe('StyleGuideComponent', () => {
-  let component: StyleGuideComponent;
-  let fixture: ComponentFixture<StyleGuideComponent>;
+describe('BasicFormComponent', () => {
+  let component: BasicFormComponent;
+  let fixture: ComponentFixture<BasicFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StyleGuideComponent ]
+      declarations: [ BasicFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StyleGuideComponent);
+    fixture = TestBed.createComponent(BasicFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
