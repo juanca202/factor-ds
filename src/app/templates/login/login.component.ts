@@ -7,6 +7,8 @@ import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@ang
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  state: string = 'first-access';
+  view: string = 'preview';
   form: FormGroup;
   lastUser: any;
 
@@ -19,7 +21,6 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-    this.lastUser = {username: 'John Doe'};
   }
   submit() {
     this.validateAllFormFields(this.form);
@@ -39,5 +40,18 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-
+  setView(view) {
+    this.view = view;
+  }
+  setState(state) {
+    this.state = state;
+    switch(state) {
+      case 'first-access':
+        this.lastUser = null;
+        break;
+      case 'remembered-user':
+        this.lastUser = {username: 'John Doe'};
+        break;
+    }
+  }
 }

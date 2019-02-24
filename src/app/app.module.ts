@@ -11,6 +11,7 @@ import { InputsModule } from 'factor-inputs';
 import { CoreModule } from './core/core.module';
 import { IconsModule } from './icons/icons.module';
 import { GuidelinesModule } from './guidelines/guidelines.module';
+import { ComponentsModule } from './components/components.module';
 import { TemplatesModule } from './templates/templates.module';
 import { AppComponent } from './app.component';
 
@@ -31,6 +32,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     IconsModule,
     GuidelinesModule,
+    ComponentsModule,
     TemplatesModule
   ],
   providers: [],

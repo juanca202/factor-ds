@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,7 @@ export class AppComponent implements OnInit {
   selectedBook: any;
   books: any[] = [
     {
-      label:
-        'Design System',
+      label: 'Design System',
       options: [
         {
           label: 'Home',
@@ -55,6 +55,10 @@ export class AppComponent implements OnInit {
           type: 'collapsible',
           children: [
             {
+              label: 'Overview',
+              url: '/components'
+            },
+            {
               label: 'Common',
               type: 'header'
             },
@@ -65,6 +69,10 @@ export class AppComponent implements OnInit {
             {
               label: 'Image',
               url: '/common/image'
+            },
+            {
+              label: 'Message',
+              url: '/common/message'
             },
             {
               label: 'Inputs',
@@ -93,6 +101,18 @@ export class AppComponent implements OnInit {
             {
               label: 'List',
               url: '/inputs/list'
+            },
+            {
+              label: 'Navigation',
+              type: 'header'
+            },
+            {
+              label: 'Sidenav',
+              url: '/navigation/sidenav'
+            },
+            {
+              label: 'Stepper',
+              url: '/navigation/stepper'
             }
           ]
         },
@@ -101,8 +121,8 @@ export class AppComponent implements OnInit {
           type: 'collapsible',
           children: [
             {
-              label: 'Starter page',
-              url: '/templates/page'
+              label: 'Overview',
+              url: '/templates'
             },
             {
               label: 'Basic form',
@@ -128,29 +148,43 @@ export class AppComponent implements OnInit {
         }
       ]
     },
-    { label: 'Components' },
+    { label: 'Components API' },
     {
-      label: 'Icons',
-      options: [
-        {
-          label: 'Overview',
-          url: 'icons'
-        },
-        {
-          label: 'Search',
-          url: 'icons/search'
-        }
-      ]
+      label: 'Icons Search'
     }
   ];
   comboboxExpanded: boolean;
   options: any[];
+  bookNavigation = {
+    previous: {
+      label: 'About',
+      url: '/about'
+    },
+    next: {
+      label: 'Color',
+      url: '/guidelines/color',
+      bookName: 'Guidelines'
+    }
+  };
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.toggleCombobox(this.books[0]);
     this.comboboxExpanded = false;
+    this.router.events.subscribe(event => {
+      //this.findNode(event.urlAfterRedirects, this.books);
+    });
+  }
+  findNode(url, treeChildren) {
+
+    treeChildren.forEach((treeNode, index) => {
+      if (treeNode.url && treeNode.url == url) {
+
+      }
+    })
   }
   toggleCombobox(book: any) {
     this.selectedBook = book;

@@ -1,23 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Preview</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Typescript</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">SCSS</a>
-    </li>
-  </ul>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">First access</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Remember user</a>
-    </li>
-  </ul>
+  <div class="btn-group">
+    <button class="btn btn-outline-primary" [ngClass]="{active:view=='preview'}" (click)="setView('preview')">Preview</button>
+    <button class="btn btn-outline-primary" [ngClass]="{active:view=='typescript'}" (click)="setView('typescript')">Typescript</button>
+    <button class="btn btn-outline-primary" [ngClass]="{active:view=='scss'}" (click)="setView('scss')">SCSS</button>
+  </div>
+  <div class="btn-group ml-auto">
+    <button class="btn btn-outline-primary" [ngClass]="{active:state=='first-access'}" (click)="setState('first-access')">First access</button>
+    <button class="btn btn-outline-primary" [ngClass]="{active:state=='remembered-user'}" (click)="setState('remembered-user')">Remembered user</button>
+  </div>
 </nav>
 <form [formGroup]="form" (ngSubmit)="submit()" class="container p-5" style="max-width: 400px; margin: auto;">
   <h3>Sign in</h3>

@@ -3,22 +3,14 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 ft-sidenav {
-  .sidenav-brand {
-    background-color: rgba(43, 132, 238, .05);
-  }
-  .sidenav-header {
-    font-size: 1.125rem;
-    font-weight: 500;
-    padding: 0.75rem 1.25rem;
-  }
-  /deep/.list-group {
-    transition: opacity .3s;
-  }
   &.primary-shown {
     /deep/.list-group {
       pointer-events: none;
       opacity: 0.5;
     }
+  }
+  .footer {
+    border-top: 1px solid $input-border-color;
   }
 }
 .combobox {
@@ -73,9 +65,39 @@ ft-sidenav {
   }
 }
 .content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   &.left-sidenav {
     @include media-breakpoint-up(md) {
       margin-left: 16rem;
+    }
+  }
+  .book-nav {
+    border-top: 1px solid $input-border-color;
+    display: flex;
+    margin-top: auto;
+    a {
+      flex: 1;
+      padding: 2rem;
+      &:hover {
+        background-color: $light;
+      }
+      &:first-child {
+        border-right: 1px solid $input-border-color;
+        text-align: right;
+        color: $body-color;
+      }
+      &:last-child {
+        font-weight: 500;
+      }
+      .book-name {
+        position: absolute;
+        font-size: 80%;
+        color: #666;
+        font-weight: 300;
+        margin-top: -19px;
+      }
     }
   }
 }

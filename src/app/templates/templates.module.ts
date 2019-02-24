@@ -8,11 +8,13 @@ import { InputsModule } from 'factor-inputs';
 import { TemplatesRoutingModule } from './templates-routing.module';
 import { BasicFormComponent } from './basic-form/basic-form.component';
 import { LoginComponent } from './login/login.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
     BasicFormComponent,
-    LoginComponent
+    LoginComponent,
+    OverviewComponent
   ],
   imports: [
     CommonModule,
