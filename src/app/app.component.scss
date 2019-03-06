@@ -9,8 +9,10 @@ ft-sidenav {
       opacity: 0.5;
     }
   }
-  .footer {
-    border-top: 1px solid $input-border-color;
+  .language {
+    border-bottom: 1px solid $input-border-color;
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
   }
 }
 .combobox {
@@ -77,11 +79,13 @@ ft-sidenav {
     border-top: 1px solid $input-border-color;
     display: flex;
     margin-top: auto;
-    a {
+    min-height: fit-content;
+    .book-nav-item {
       flex: 1;
-      padding: 2rem;
-      &:hover {
+      padding: 1rem 2rem;
+      &:not(div):hover {
         background-color: $light;
+        text-decoration: none;
       }
       &:first-child {
         border-right: 1px solid $input-border-color;
@@ -92,11 +96,9 @@ ft-sidenav {
         font-weight: 500;
       }
       .book-name {
-        position: absolute;
         font-size: 80%;
         color: #666;
         font-weight: 300;
-        margin-top: -19px;
       }
     }
   }

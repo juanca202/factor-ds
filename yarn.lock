@@ -2572,10 +2572,10 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
-factor-common@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/factor-common/-/factor-common-0.0.11.tgz#0eff763f6131eebe6942a91201e66d601c3abbf1"
-  integrity sha512-mkBMAHKsi1HMYXprvsaQt36qaqKCjv4LUlw+UNN/dqvc9HqDq7w0dcQ7coBRHTympDJo2/o9Ri4V5BrcMtYb9Q==
+factor-common@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/factor-common/-/factor-common-0.0.12.tgz#95251bd14030bae6b914f5693fa67be75e76c6e3"
+  integrity sha512-mmBjvv8gV/+4cTsH1pRh+NEkqf166oKj50Ly8hMm3habpfutSNTopPYc/GXXcMr1cNuDjxmhdoKhi0BEWzWdhw==
   dependencies:
     tslib "^1.9.0"
 
@@ -2586,10 +2586,10 @@ factor-inputs@^0.0.14:
   dependencies:
     tslib "^1.9.0"
 
-factor-navigation@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.12.tgz#635782e1d8e20f30b0e020d3ba083a4d3260839b"
-  integrity sha512-coz1CMXaVfqUHU+iQDT9ho0yb5snrrlMDd0ZhUSVhi2n/wMTB5ViQmI+pfwrxooTpq6y1pmkLUEnW03Vpf/rRQ==
+factor-navigation@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.13.tgz#57da8055018425d307208f1d7d8863bdc18b7b61"
+  integrity sha512-EA/1MT8J2a4FRjooglQqZ6t6A3u8ppYZPOQP0/7TLW+6BfQIMHj7dXulnMNLnTh1cdFtaGahzoQqxlJzX0F5dA==
   dependencies:
     tslib "^1.9.0"
 

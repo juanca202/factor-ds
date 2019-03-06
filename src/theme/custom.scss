@@ -46,3 +46,24 @@ html {
     }
   }
 }
+
+[ftRipple] {
+  position: relative;
+  overflow: hidden;
+  .ripple {
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    transform: scale(0);
+  }
+  .ripple.ripple-animate {
+    animation: ripple 0.35s linear;
+  }
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}

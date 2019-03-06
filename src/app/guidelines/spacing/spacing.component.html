@@ -1,27 +1,89 @@
 <div class="container p-4 p-sm-5">
   <div class="small text-muted">Guidelines</div>
   <h1>Spacing</h1>
-  <p class="lead">Good spacing systems are based on increments that are visually distinguishable and are backed by solid mathematical principles. This toolkit gives designers and developers guidelines for effectively applying layout spacing, resulting in a more consistent application of space across our product.</p>
-  <div>
-    <div class="d-flex align-items-center mb-2">
-      <div class="font-weight-bold mr-2" style="width:15px;">1</div>
-      <div class="bg-primary" style="width:0.25rem; height:0.25rem;"></div>
-    </div>
-    <div class="d-flex align-items-center mb-2">
-      <div class="font-weight-bold mr-2" style="width:15px;">2</div>
-      <div class="bg-primary" style="width:0.5rem; height:0.5rem;"></div>
-    </div>
-    <div class="d-flex align-items-center mb-2">
-      <div class="font-weight-bold mr-2" style="width:15px;">3</div>
-      <div class="bg-primary" style="width:1rem; height:1rem;"></div>
-    </div>
-    <div class="d-flex align-items-center mb-2">
-      <div class="font-weight-bold mr-2" style="width:15px;">4</div>
-      <div class="bg-primary" style="width:1.5rem; height:1.5rem;"></div>
-    </div>
+  <p class="lead">El sistema de espaciado está basado en incrementos que son visualmente distinguibles. Aplicando eficientemente el espaciado en el diseño proporsiona mayor consistencia en la aplicación.</p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Size</th>
+        <th>Rem</th>
+        <th>Preview</th>
+        <th>Usos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>0.25</td>
+        <td>
+          <div class="bg-primary" style="width:0.25rem; height:0.25rem;"></div>
+        </td>
+        <td>
+          <ul>
+            <li>Espacio entre ícono y la etiqueta</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>0.50</td>
+        <td>
+          <div class="bg-primary" style="width:0.5rem; height:0.5rem;"></div>
+        </td>
+        <td>
+          <ul>
+            <li>Espacio interior del botón a la etiqueta</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>1.00</td>
+        <td>
+          <div class="bg-primary" style="width:1rem; height:1rem;"></div>
+        </td>
+        <td>
+          <ul>
+            <li>Márgenes entre elementos móvil</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>1.50</td>
+        <td>
+          <div class="bg-primary" style="width:1.5rem; height:1.5rem;"></div>
+        </td>
+        <td>
+          <ul>
+            <li>Márgenes de página móvil</li>
+            <li>Márgenes entre elementos desktop</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>3.00</td>
+        <td>
+          <div class="bg-primary" style="width:3rem; height:3rem;"></div>
+        </td>
+        <td>
+          <ul>
+            <li>Márgenes de página desktop</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 class="mt-5">Objetivos táctiles</h2>
+  <p>Los objetivos táctiles se aplican a dispositivos que reciben entradas táctiles y no táctiles. Para balanciar la densidad de la información y la usabilidad los objetivos táctiles deben tener al menos 3x3rem y un espacio de 0.50rem entre ellos.</p>
+  <button type="button" class="btn btn-outline-primary p-2 mr-4">
+    <ft-icon name="plus" size="2"></ft-icon>
+  </button>
+  <button type="button" class="btn btn-outline-primary p-2 pr-4">
     <div class="d-flex align-items-center">
-      <div class="font-weight-bold mr-2" style="width:15px;">5</div>
-      <div class="bg-primary" style="width:3rem; height:3rem;"></div>
+      <ft-icon name="plus" size="2"></ft-icon>
+      <div class="ml-1">Add</div>
     </div>
-  </div>
+  </button>
 </div>

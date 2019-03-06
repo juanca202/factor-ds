@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   books: any[] = [
     {
       label: 'Design System',
-      options: [
+      children: [
         {
           label: 'Home',
           url: '/'
@@ -69,6 +69,10 @@ export class AppComponent implements OnInit {
             {
               label: 'Image',
               url: '/common/image'
+            },
+            {
+              label: 'Progress',
+              url: '/common/progress'
             },
             {
               label: 'Message',
@@ -155,16 +159,10 @@ export class AppComponent implements OnInit {
   ];
   comboboxExpanded: boolean;
   options: any[];
-  bookNavigation = {
-    previous: {
-      label: 'About',
-      url: '/about'
-    },
-    next: {
-      label: 'Color',
-      url: '/guidelines/color',
-      bookName: 'Guidelines'
-    }
+  bookNavigation: any = {
+    previous: {},
+    current: {},
+    next: {}
   };
 
   constructor(
@@ -174,21 +172,70 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.toggleCombobox(this.books[0]);
     this.comboboxExpanded = false;
-    this.router.events.subscribe(event => {
-      //this.findNode(event.urlAfterRedirects, this.books);
+    this.router.events.subscribe((event: any) => {
+      this.findNode(event.urlAfterRedirects, this.books[0]);
     });
   }
-  findNode(url, treeChildren) {
+  findNode(url: string, node: any, parentNode?: any) {
+    node.children.forEach((childNode, index) => {
+      if (childNode.url && childNode.url == url) {
+        this.bookNavigation.current = childNode;
+        let previousNode = node.children[index - 1];
+        if (previousNode && previousNode.children && previousNode.children.length > 0) {
+          previousNode = previousNode.children[previousNode.children.length - 1];
+          if (previousNode.type == 'header') {
+            previousNode = previousNode.children[previousNode.children.length - 2];
+          }
+        } else if (parentNode && parentNode.children && parentNode.children.length > 0) {
+          const index = parentNode.children.indexOf(node);
+          previousNode = parentNode.children[index - 1];
+          if (previousNode && previousNode.children && previousNode.children.length>0) {
+            previousNode = previousNode.children[previousNode.children.length - 1];
+          }
+        }
+        if (previousNode) {
+          this.bookNavigation.previous = previousNode;
+          this.bookNavigation.previous.bookName = parentNode? parentNode.label : null;
+        } else {
+          this.bookNavigation.previous = null;
+        }
 
-    treeChildren.forEach((treeNode, index) => {
-      if (treeNode.url && treeNode.url == url) {
-
+        let nextNode = node.children[index + 1];
+        if (nextNode) {
+          if (nextNode.children && nextNode.children.length > 0) {
+            this.bookNavigation.next = nextNode.children[0];
+            this.bookNavigation.next.bookName = nextNode.label;
+          } else {
+            if (nextNode.type && nextNode.type == 'header') {
+              nextNode = node.children[index + 2];
+            }
+            this.bookNavigation.next = nextNode;
+            this.bookNavigation.next.bookName = node.label;
+          }
+        } else if (parentNode && parentNode.children && parentNode.children.length > 0) {
+          const index = parentNode.children.indexOf(node);
+          let nextSibling = parentNode.children[index + 1];
+          if (nextSibling.type && nextSibling.type == 'header') {
+            nextSibling = parentNode.children[index + 2];
+          }
+          if (nextSibling && nextSibling.children && nextSibling.children.length > 0) {
+            this.bookNavigation.next = nextSibling.children[0];
+            this.bookNavigation.next.bookName = nextSibling.label;
+          } else {
+            this.bookNavigation.next = nextSibling;
+            this.bookNavigation.next.bookName = parentNode.label;
+          }
+        } else {
+          this.bookNavigation.next = null;
+        }
+      } else if (childNode.children) {
+        this.findNode(url, childNode, node);
       }
-    })
+    });
   }
   toggleCombobox(book: any) {
     this.selectedBook = book;
-    this.options = this.selectedBook.options;
+    this.options = this.selectedBook.children;
     this.comboboxExpanded = !this.comboboxExpanded;
   }
 }

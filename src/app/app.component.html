@@ -1,34 +1,44 @@
 <ft-sidenav #sidenav labelField="label" [options]="options" [docked]="true" [ngClass]="{'primary-shown':comboboxExpanded}">
   <div ftStart>
     <div class="combobox" [ngClass]="{show:comboboxExpanded}">
-      <button type="button" class="combobox-item btn w-100 text-left rounded-0" [ngClass]="{active: book==selectedBook}" (click)="toggleCombobox(book)" *ngFor="let book of books">
+      <button type="button" ftRipple class="combobox-item btn w-100 text-left rounded-0" [ngClass]="{active: book==selectedBook}" (click)="toggleCombobox(book)" *ngFor="let book of books">
         <div>{{ book.label }}</div>
       </button>
       <ft-icon class="combobox-toggle" name="angle-expand" size="1" style="position: absolute; top: 50%; margin-top: -8px; color: #FFF;"></ft-icon>
     </div>
-  </div>
-  <div ftEnd class="footer mt-auto mx-2 text-center">
-    <div class="btn-group btn-group-sm my-2">
-      <button class="btn btn-outline-primary active">English</button>
-        <button class="btn btn-outline-primary">Español</button>
+    <div class="language">
+      <div class="btn-group btn-group-sm my-2 w-100">
+        <button ftRipple class="btn btn-outline-primary active">English</button>
+        <button ftRipple class="btn btn-outline-primary">Español</button>
+      </div>
     </div>
   </div>
 </ft-sidenav>
 <div class="page-navigation p-2 sticky-top d-block d-md-none mb-n4">
-  <button class="btn p-2" (click)="sidenav.show()"><ft-icon name="menu" size="2"></ft-icon></button>
+  <button class="btn p-2" (click)="sidenav.show()">
+    <ft-icon name="menu" size="2"></ft-icon>
+  </button>
 </div>
 <div class="content" [ngClass]="{'left-sidenav': sidenav.docked}">
   <router-outlet></router-outlet>
   <div class="book-nav">
-    <a [routerLink]="bookNavigation.previous.url" class="d-flex align-items-center justify-content-end">
-      <div class="book-name">{{ bookNavigation.previous.bookName }}</div>
-      <ft-icon class="mr-2" name="angle-left"></ft-icon>
-      <div>{{ bookNavigation.previous.label }}</div>
+    <a class="book-nav-item" ftRipple [routerLink]="bookNavigation.previous.url" *ngIf="bookNavigation.previous; else bookNavItemPlaceholder">
+      <div class="book-name">&nbsp;{{ bookNavigation.previous.bookName }}</div>
+      <div class="d-flex align-items-center justify-content-end">
+        <ft-icon class="mr-1" name="angle-left"></ft-icon>
+        <div>{{ bookNavigation.previous.label }}</div>
+      </div>
     </a>
-    <a [routerLink]="bookNavigation.next.url" class="d-flex align-items-center">
-      <div class="book-name">{{ bookNavigation.next.bookName }}</div>
-      <div>{{ bookNavigation.next.label }}</div>
-      <ft-icon class="ml-2" name="angle-right"></ft-icon>
+    <a class="book-nav-item" ftRipple [routerLink]="bookNavigation.next.url" *ngIf="bookNavigation.next; else bookNavItemPlaceholder">
+      <div class="book-name">{{ bookNavigation.next.bookName }}&nbsp;</div>
+      <div class="d-flex align-items-center">
+        <div>{{ bookNavigation.next.label }}</div>
+        <ft-icon class="ml-1" name="angle-right"></ft-icon>
+      </div>
     </a>
   </div>
 </div>
+
+<ng-template #bookNavItemPlaceholder>
+  <div class="book-nav-item"></div>
+</ng-template>
