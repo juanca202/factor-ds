@@ -7,10 +7,10 @@ import { TypographyComponent } from './typography/typography.component';
 import { MotionComponent } from './motion/motion.component';
 
 const routes: Routes = [
-  { path: 'guidelines/color', component: ColorComponent },
-  { path: 'guidelines/spacing', component: SpacingComponent },
-  { path: 'guidelines/typography', component: TypographyComponent },
-  { path: 'guidelines/motion', component: MotionComponent }
+  { path: 'design-system/guidelines/color', component: ColorComponent },
+  { path: 'design-system/guidelines/spacing', component: SpacingComponent },
+  { path: 'design-system/guidelines/typography', component: TypographyComponent },
+  { path: 'design-system/guidelines/motion', component: MotionComponent }
 ];
 
 @NgModule({

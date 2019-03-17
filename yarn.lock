@@ -2586,10 +2586,10 @@ factor-inputs@^0.0.14:
   dependencies:
     tslib "^1.9.0"
 
-factor-navigation@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.13.tgz#57da8055018425d307208f1d7d8863bdc18b7b61"
-  integrity sha512-EA/1MT8J2a4FRjooglQqZ6t6A3u8ppYZPOQP0/7TLW+6BfQIMHj7dXulnMNLnTh1cdFtaGahzoQqxlJzX0F5dA==
+factor-navigation@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/factor-navigation/-/factor-navigation-0.0.14.tgz#4fbd3042875a055388b547f98de937f10b4848a7"
+  integrity sha512-RmyeJnl2MpUpXA4e99h/jE8vEvkSF0guk8DbEzie8plhn3OuY5wruC8vIvryxvpjnc6Hx4/GxKLepeVmLKGv4g==
   dependencies:
     tslib "^1.9.0"
 

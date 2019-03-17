@@ -6,9 +6,9 @@ import { BasicFormComponent } from './basic-form/basic-form.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'templates', component: OverviewComponent },
-  { path: 'templates/basic-form', component: BasicFormComponent },
-  { path: 'templates/login', component: LoginComponent }
+  { path: 'design-system/templates', component: OverviewComponent },
+  { path: 'design-system/templates/basic-form', component: BasicFormComponent },
+  { path: 'design-system/templates/login', component: LoginComponent }
 ];
 
 @NgModule({

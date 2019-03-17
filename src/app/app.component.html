@@ -1,25 +1,18 @@
-<ft-sidenav #sidenav labelField="label" [options]="options" [docked]="true" [ngClass]="{'primary-shown':comboboxExpanded}">
-  <div ftStart>
-    <div class="combobox" [ngClass]="{show:comboboxExpanded}">
-      <button type="button" ftRipple class="combobox-item btn w-100 text-left rounded-0" [ngClass]="{active: book==selectedBook}" (click)="toggleCombobox(book)" *ngFor="let book of books">
-        <div>{{ book.label }}</div>
-      </button>
-      <ft-icon class="combobox-toggle" name="angle-expand" size="1" style="position: absolute; top: 50%; margin-top: -8px; color: #FFF;"></ft-icon>
-    </div>
-    <div class="language">
-      <div class="btn-group btn-group-sm my-2 w-100">
-        <button ftRipple class="btn btn-outline-primary active">English</button>
-        <button ftRipple class="btn btn-outline-primary">Español</button>
-      </div>
-    </div>
-  </div>
-</ft-sidenav>
-<div class="page-navigation p-2 sticky-top d-block d-md-none mb-n4">
-  <button class="btn p-2" (click)="sidenav.show()">
+<ft-sidenav #sidenav labelField="label" [options]="options" [docked]="true" [ngClass]="{'primary-shown':comboboxExpanded}"></ft-sidenav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light pl-2 sticky-top">
+  <button class="btn p-2 mr-2" ftRipple (click)="sidenav.toggle()">
     <ft-icon name="menu" size="2"></ft-icon>
   </button>
-</div>
-<div class="content" [ngClass]="{'left-sidenav': sidenav.docked}">
+  <a class="navbar-brand" routerLink="/design-system/"><img src="assets/logo-factor.svg" /></a>
+  <div class="btn-group btn-group-sm mx-auto">
+    <a [routerLink]="book.url" routerLinkActive="active" class="btn btn-outline-primary px-3" style="min-width:140px;" ftRipple *ngFor="let book of books">{{ book.label }}</a>
+  </div>
+  <div class="btn-group btn-group-sm ml-3">
+    <button ftRipple class="btn btn-outline-primary active">EN</button>
+    <button ftRipple class="btn btn-outline-primary">ES</button>
+  </div>
+</nav>
+<div class="content" [ngClass]="{'left-sidenav': sidenav.shown}">
   <router-outlet></router-outlet>
   <div class="book-nav">
     <a class="book-nav-item" ftRipple [routerLink]="bookNavigation.previous.url" *ngIf="bookNavigation.previous; else bookNavItemPlaceholder">

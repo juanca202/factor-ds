@@ -50,6 +50,10 @@ html {
 [ftRipple] {
   position: relative;
   overflow: hidden;
+  &:active,
+  &:focus {
+    box-shadow: 0 0;
+  }
   .ripple {
     display: block;
     position: absolute;

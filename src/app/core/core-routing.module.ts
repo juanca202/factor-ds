@@ -6,9 +6,10 @@ import { AboutComponent } from './about/about.component';
 import { ContributingComponent } from './contributing/contributing.component';
 
 const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'contributing', component: ContributingComponent}
+    {path: '', redirectTo: '/design-system', pathMatch: 'full'},
+    {path: 'design-system', component: HomeComponent},
+    {path: 'design-system/about', component: AboutComponent},
+    {path: 'design-system/contributing', component: ContributingComponent}
 ];
 
 @NgModule({

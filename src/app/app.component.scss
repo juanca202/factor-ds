@@ -2,74 +2,30 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
-ft-sidenav {
-  &.primary-shown {
-    /deep/.list-group {
-      pointer-events: none;
-      opacity: 0.5;
+.navbar {
+  height: 4rem;
+  .navbar-brand {
+    img {
+      display: block;
     }
-  }
-  .language {
-    border-bottom: 1px solid $input-border-color;
-    margin: 0 0.5rem;
-    padding: 0 0.5rem;
   }
 }
-.combobox {
-  position: relative;
-  border-bottom: 1px solid transparent;
-  transition: border-color .2s;
-  > .combobox-item {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s, background-color .4s, color .4s;
-    font-size: 1.125rem;
-    margin: 0;
-    display: block;
-    border: 0;
-    padding: 0;
-    background-color: $primary;
-    color: #FFF;
-    &:focus {
-      box-shadow: 0 0;
+ft-sidenav {
+  /deep/.content {
+    @include media-breakpoint-up(md) {
+      margin-top: 4rem;
+      border-right: 2px solid $light;
+      box-shadow: 0 0 !important;
+      background: #FFF;
     }
-    &.active {
-      max-height: 51px;
-      background-color: $primary;
-      color: #FFF;
-    }
-    > div {
-      padding: 0.75rem 1.25rem;
-    }
-  }
-  > .combobox-toggle {
-    position: absolute;
-    right: 1.25rem;
-    opacity: 1;
-    transition: opacity .2s linear .2s;
-    pointer-events: none;
-  }
-  &.show {
-    > .combobox-item {
-      max-height: 100vh;
-      background-color: transparent;
-      color: $body-color;
-      &.active {
-        background-color: rgba(0,0,0,.02);
-        color: $primary;
-      }
-    }
-    > .combobox-toggle {
-      opacity: 0;
-      transition: none;
-    }
-    border-color: rgba(33,37,41,.1);
   }
 }
 .content {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
   &.left-sidenav {
     @include media-breakpoint-up(md) {
       margin-left: 16rem;

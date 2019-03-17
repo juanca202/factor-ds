@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+
+import { SidenavComponent } from 'factor-navigation';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +13,15 @@ export class AppComponent implements OnInit {
   books: any[] = [
     {
       label: 'Design System',
+      url: '/design-system',
       children: [
         {
-          label: 'Home',
-          url: '/'
-        },
-        {
           label: 'About',
-          url: '/about'
+          url: '/design-system/about'
         },
         {
           label: 'Contributing',
-          url: '/contributing'
+          url: '/design-system/contributing'
         },
         {
           label: 'Guidelines',
@@ -30,23 +29,23 @@ export class AppComponent implements OnInit {
           children: [
             {
               label: 'Color',
-              url: '/guidelines/color'
+              url: '/design-system/guidelines/color'
             },
             {
               label: 'Spacing',
-              url: '/guidelines/spacing'
+              url: '/design-system/guidelines/spacing'
             },
             {
               label: 'Typography',
-              url: '/guidelines/typography'
+              url: '/design-system/guidelines/typography'
             },
             {
               label: 'Motion',
-              url: '/guidelines/motion'
+              url: '/design-system/guidelines/motion'
             },
             {
               label: 'Icons',
-              url: '/icons'
+              url: '/design-system/guidelines/icons'
             }
           ]
         },
@@ -56,7 +55,7 @@ export class AppComponent implements OnInit {
           children: [
             {
               label: 'Overview',
-              url: '/components'
+              url: '/design-system/components'
             },
             {
               label: 'Common',
@@ -64,19 +63,19 @@ export class AppComponent implements OnInit {
             },
             {
               label: 'Icon',
-              url: '/common/icon'
+              url: '/design-system/components/icon'
             },
             {
               label: 'Image',
-              url: '/common/image'
+              url: '/design-system/components/image'
             },
             {
               label: 'Progress',
-              url: '/common/progress'
+              url: '/design-system/components/progress'
             },
             {
               label: 'Message',
-              url: '/common/message'
+              url: '/design-system/components/message'
             },
             {
               label: 'Inputs',
@@ -84,27 +83,27 @@ export class AppComponent implements OnInit {
             },
             {
               label: 'Text input',
-              url: '/inputs/text-input'
+              url: '/design-system/components/text-input'
             },
             {
               label: 'Text area',
-              url: '/inputs/text-area'
+              url: '/design-system/components/text-area'
             },
             {
               label: 'Select',
-              url: '/inputs/select'
+              url: '/design-system/components/select'
             },
             {
               label: 'File picker',
-              url: '/inputs/file-picker'
+              url: '/design-system/components/file-picker'
             },
             {
               label: 'Rating',
-              url: '/inputs/rating'
+              url: '/design-system/components/rating'
             },
             {
               label: 'List',
-              url: '/inputs/list'
+              url: '/design-system/components/list'
             },
             {
               label: 'Navigation',
@@ -112,11 +111,11 @@ export class AppComponent implements OnInit {
             },
             {
               label: 'Sidenav',
-              url: '/navigation/sidenav'
+              url: '/design-system/components/sidenav'
             },
             {
               label: 'Stepper',
-              url: '/navigation/stepper'
+              url: '/design-system/components/stepper'
             }
           ]
         },
@@ -126,44 +125,44 @@ export class AppComponent implements OnInit {
           children: [
             {
               label: 'Overview',
-              url: '/templates'
+              url: '/design-system/templates'
             },
             {
               label: 'Basic form',
-              url: '/templates/basic-form'
+              url: '/design-system/templates/basic-form'
             },
             {
               label: 'Login',
-              url: '/templates/login'
+              url: '/design-system/templates/login'
             },
             {
               label: 'Search',
-              url: '/templates/search'
+              url: '/design-system/templates/search'
             },
             {
               label: 'Workflow task',
-              url: '/templates/workflow-task'
+              url: '/design-system/templates/workflow-task'
             },
             {
               label: 'Wizard',
-              url: '/templates/wizard'
+              url: '/design-system/templates/wizard'
             }
           ]
         }
       ]
     },
-    { label: 'Components API' },
     {
-      label: 'Icons Search'
+      label: 'Icons',
+      url: '/icons/search'
     }
   ];
-  comboboxExpanded: boolean;
   options: any[];
   bookNavigation: any = {
     previous: {},
     current: {},
     next: {}
   };
+  @ViewChild(SidenavComponent) sidenav: SidenavComponent;
 
   constructor(
     private router: Router
@@ -171,8 +170,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.toggleCombobox(this.books[0]);
-    this.comboboxExpanded = false;
     this.router.events.subscribe((event: any) => {
+      if (event.urlAfterRedirects) {
+        if (event.urlAfterRedirects === '/design-system') {
+          this.sidenav.hide();
+        } else {
+          this.sidenav.show();
+        }
+      }
       this.findNode(event.urlAfterRedirects, this.books[0]);
     });
   }
@@ -189,13 +194,13 @@ export class AppComponent implements OnInit {
         } else if (parentNode && parentNode.children && parentNode.children.length > 0) {
           const index = parentNode.children.indexOf(node);
           previousNode = parentNode.children[index - 1];
-          if (previousNode && previousNode.children && previousNode.children.length>0) {
+          if (previousNode && previousNode.children && previousNode.children.length > 0) {
             previousNode = previousNode.children[previousNode.children.length - 1];
           }
         }
         if (previousNode) {
           this.bookNavigation.previous = previousNode;
-          this.bookNavigation.previous.bookName = parentNode? parentNode.label : null;
+          this.bookNavigation.previous.bookName = parentNode ? parentNode.label : null;
         } else {
           this.bookNavigation.previous = null;
         }
@@ -236,6 +241,5 @@ export class AppComponent implements OnInit {
   toggleCombobox(book: any) {
     this.selectedBook = book;
     this.options = this.selectedBook.children;
-    this.comboboxExpanded = !this.comboboxExpanded;
   }
 }

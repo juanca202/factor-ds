@@ -5,7 +5,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  {path: 'icons', component: OverviewComponent},
+  {path: 'design-system/guidelines/icons', component: OverviewComponent},
   {path: 'icons/search', component: SearchComponent}
 ];
 
