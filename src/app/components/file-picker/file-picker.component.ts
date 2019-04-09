@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-picker.component.scss']
 })
 export class FilePickerComponent implements OnInit {
+  file: any[];
+  image: any[];
 
   constructor() { }
 

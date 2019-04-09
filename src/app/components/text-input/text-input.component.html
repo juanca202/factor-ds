@@ -3,6 +3,22 @@
   <h1>Text input</h1>
   <p class="lead">You can use either the npm or yarn command-line tool to install packages. Use whichever is appropriate for your project in the examples below.</p>
 
+  <h2>States</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <tr class="text-center">
+        <td><ft-text-input label="Name" style="max-width:300px;"></ft-text-input></td>
+        <td><ft-text-input label="Name" style="max-width:300px;" [readOnly]="true"></ft-text-input></td>
+        <td><ft-text-input label="Name" style="max-width:300px;" disabled></ft-text-input></td>
+      </tr>
+      <tr class="text-center">
+        <th>Normal</th>
+        <th>Read only</th>
+        <th>Disabled</th>
+      </tr>
+    </tbody>
+  </table>
+
   <h2>Label</h2>
   <ft-text-input label="Name" style="max-width:300px;"></ft-text-input>
 

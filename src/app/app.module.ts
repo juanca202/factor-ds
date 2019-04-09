@@ -27,7 +27,7 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot([], {
       scrollPositionRestoration: 'enabled'
     }),
-    FactorCommonModule.forRoot({ icon: { path: 'assets/icons-library/symbols', collection: 'factoricons-regular' } }),
+    FactorCommonModule.forRoot({ icon: { path: 'assets/factoricons/symbols', collection: 'factoricons-regular' } }),
     NavigationModule,
     CoreModule,
     IconsModule,

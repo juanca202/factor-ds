@@ -3,8 +3,29 @@
   <h1>File picker</h1>
   <p class="lead">You can use either the npm or yarn command-line tool to install packages. Use whichever is appropriate for your project in the examples below.</p>
 
-  <ft-file-picker class="p-4 text-center">
-    <ft-icon name="media-image" collection="factoricons-slim" size="4"></ft-icon>
-    <div class="text-center small">Click to upload a picture</div>
-  </ft-file-picker>
+  <div class="d-flex">
+    <ft-file-picker [(ngModel)]="file" class="mr-3">
+      <div class="placeholder p-4 text-center d-flex flex-column justify-content-center align-items-center" *ngIf="!file; else pdfTemplate">
+        <ft-icon name="cloud-upload" collection="factoricons-slim" size="5"></ft-icon>
+        <div class="text-center small">Click to upload a pdf</div>
+      </div>
+    </ft-file-picker>
+    <ft-file-picker [(ngModel)]="image" accept="image/*">
+      <div class="placeholder p-4 text-center d-flex flex-column justify-content-center align-items-center" *ngIf="!image; else imageTemplate">
+        <ft-icon name="media-image" collection="factoricons-slim" size="5"></ft-icon>
+        <div class="text-center small">Click to upload a picture</div>
+      </div>
+    </ft-file-picker>
+  </div>
 </div>
+
+<ng-template #imageTemplate>
+  <img [src]="image[0].data" />
+</ng-template>
+
+<ng-template #pdfTemplate>
+  <div class="placeholder p-4 text-center d-flex flex-column justify-content-center align-items-center">
+    <ft-icon name="document-text" collection="factoricons-slim" size="5"></ft-icon>
+    <div class="text-center small">{{ file[0].name }}</div>
+  </div>
+</ng-template>

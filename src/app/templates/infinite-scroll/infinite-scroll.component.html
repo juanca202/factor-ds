@@ -1,0 +1,18 @@
+<div class="container p-4 p-md-5">
+  <h1>Products</h1>
+  <div class="list-group">
+    <div class="list-group-item d-flex" *ngFor="let product of products">
+        <div class="mr-3">
+          <ft-image class="thumbnail" [src]="product.imageUrl"></ft-image>
+        </div>
+        <div>
+          <h5>{{ product.name }}</h5>
+          <div>{{ product.price | currency }} USD</div>
+          <div><ft-rating [readOnly]="true" size="1" [ngModel]="product.rating"></ft-rating></div>
+        </div>
+    </div>
+    <div class="text-center">
+      <ft-progress size="2" (ftObserveIntersecting)="observeIntersecting($event)"></ft-progress>
+    </div>
+  </div>
+</div>

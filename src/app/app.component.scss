@@ -4,6 +4,8 @@
 @import "~bootstrap/scss/mixins";
 .navbar {
   height: 4rem;
+  background-color: #FFF;
+  border-bottom: 2px solid $light;
   .navbar-brand {
     img {
       display: block;
@@ -23,7 +25,7 @@ ft-sidenav {
 .content {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
   &.left-sidenav {

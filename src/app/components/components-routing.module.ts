@@ -8,6 +8,8 @@ import { TextInputComponent } from './text-input/text-input.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import { SelectComponent } from './select/select.component';
 import { FilePickerComponent } from './file-picker/file-picker.component';
+import { RatingComponent } from './rating/rating.component';
+import { ProgressComponent } from './progress/progress.component';
 
 const routes: Routes = [
   { path: 'design-system/components', component: OverviewComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'design-system/components/text-input', component: TextInputComponent },
   { path: 'design-system/components/text-area', component: TextAreaComponent },
   { path: 'design-system/components/select', component: SelectComponent },
-  { path: 'design-system/components/file-picker', component: FilePickerComponent }
+  { path: 'design-system/components/file-picker', component: FilePickerComponent },
+  { path: 'design-system/components/rating', component: RatingComponent },
+  { path: 'design-system/components/progress', component: ProgressComponent }
 ];
 
 @NgModule({

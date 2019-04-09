@@ -9,12 +9,16 @@ import { TemplatesRoutingModule } from './templates-routing.module';
 import { BasicFormComponent } from './basic-form/basic-form.component';
 import { LoginComponent } from './login/login.component';
 import { OverviewComponent } from './overview/overview.component';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
     BasicFormComponent,
     LoginComponent,
-    OverviewComponent
+    OverviewComponent,
+    InfiniteScrollComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule as FactorCommonModule } from 'factor-common';
 import { InputsModule } from 'factor-inputs';
@@ -12,6 +13,8 @@ import { FilePickerComponent } from './file-picker/file-picker.component';
 import { TextInputComponent } from './text-input/text-input.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import { SelectComponent } from './select/select.component';
+import { RatingComponent } from './rating/rating.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,14 @@ import { SelectComponent } from './select/select.component';
     FilePickerComponent,
     TextInputComponent,
     TextAreaComponent,
-    SelectComponent
+    SelectComponent,
+    RatingComponent,
+    ProgressComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ComponentsRoutingModule,
     FactorCommonModule,
     InputsModule

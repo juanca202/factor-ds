@@ -1,0 +1,32 @@
+<div class="container p-4 p-md-5">
+  <div class="small text-muted">Components</div>
+  <h1>Rating</h1>
+  <p class="lead">You can use either the npm or yarn command-line tool to install packages. Use whichever is appropriate for your project in the examples below.</p>
+
+  <h2>States</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <tr class="text-center">
+        <td><ft-rating size="2" [ngModel]="3"></ft-rating></td>
+        <td><ft-rating size="2" [ngModel]="3" [readOnly]="true"></ft-rating></td>
+        <td><ft-rating size="2" [ngModel]="3" [disabled]="true"></ft-rating></td>
+      </tr>
+      <tr class="text-center">
+        <th>Normal</th>
+        <th>Read only</th>
+        <th>Disabled</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="mt-5">Sizes</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <tr><th class="text-right" style="vertical-align:middle;">1</th><td style="width:100%;"><ft-rating size="1"></ft-rating></td></tr>
+      <tr><th class="text-right" style="vertical-align:middle;">2</th><td><ft-rating size="2"></ft-rating></td></tr>
+      <tr><th class="text-right" style="vertical-align:middle;">3</th><td><ft-rating size="3"></ft-rating></td></tr>
+      <tr><th class="text-right" style="vertical-align:middle;">4</th><td><ft-rating size="4"></ft-rating></td></tr>
+      <tr><th class="text-right" style="vertical-align:middle;">5</th><td><ft-rating size="5"></ft-rating></td></tr>
+    </tbody>
+  </table>
+</div>

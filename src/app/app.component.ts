@@ -114,8 +114,8 @@ export class AppComponent implements OnInit {
               url: '/design-system/components/sidenav'
             },
             {
-              label: 'Stepper',
-              url: '/design-system/components/stepper'
+              label: 'Toolbar',
+              url: '/design-system/components/toolbar'
             }
           ]
         },
@@ -140,12 +140,12 @@ export class AppComponent implements OnInit {
               url: '/design-system/templates/search'
             },
             {
-              label: 'Workflow task',
-              url: '/design-system/templates/workflow-task'
+              label: 'Infinite scroll',
+              url: '/design-system/templates/infinite-scroll'
             },
             {
-              label: 'Wizard',
-              url: '/design-system/templates/wizard'
+              label: 'Workflow task',
+              url: '/design-system/templates/workflow-task'
             }
           ]
         }

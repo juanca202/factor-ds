@@ -1,0 +1,16 @@
+<div class="container p-4">
+  <div class="list-group">
+    <div class="list-group-item d-flex p-0" *ngFor="let day of days">
+      <div class="d-flex align-items-center justify-content-end px-3 py-2" style="width:100px;">
+        <div class="mr-2" style="font-size:18px;">{{ day.date | date:'d' }}</div>
+        <div class="text-muted text-right small">{{ day.date | date:'MMM' }},<br/> {{ day.date | date:'E' }}</div>
+      </div>
+      <div class="flex-grow-1" style="border-left:1px solid #CCC;">
+        <div class="d-flex align-items-center px-3 py-2" *ngFor="let task of day.tasks">
+          <div>{{ task.title }} - <span class="text-muted small">{{ task.project.name }}</span></div>
+          <div class="ml-auto">{{ task.time }}h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
