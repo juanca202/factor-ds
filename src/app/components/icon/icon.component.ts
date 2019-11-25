@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
+  code: string = `
+    <ft-icon name="search" size="2" collections="factoricons-slim"></ft-icon>
+  `;
 
   constructor() { }
 

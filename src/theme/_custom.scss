@@ -1,0 +1,32 @@
+@import 'variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+body {
+  @include media-breakpoint-up(md) {
+    background-color: $light;
+  }
+}
+button:focus {
+  outline: none;
+}
+/*
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+*/
+ft-list {
+  --hover-text-color: #{$primary} !important;
+  --active-background-color: #{$primary} !important;
+  .list__item {
+    .item__toggle {
+      color: $primary;
+    }
+  }
+}

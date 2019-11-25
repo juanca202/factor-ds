@@ -1,0 +1,25 @@
+<div class="container p-4 p-md-5">
+  <div class="small text-muted">Componentes</div>
+  <h1>Message</h1>
+  <p class="lead">Permite mostrar mensajes de feedback al usuario, dependiendo de la intensión pueden ser modales o de notificación.</p>
+
+  <mat-card class="mb-4 p-0 overflow-hidden">
+    <pre><code [highlight]="code" class="p-0 bg-white"></code></pre>
+  </mat-card>
+
+  <h4>Tipos</h4>
+  <table class="table table-bordered">
+    <tbody>
+      <tr class="text-center">
+        <td><button type="button" mat-stroked-button color="primary" (click)="show('Has leído este mensaje importante.', {title: 'Bien hecho!', type:'modal'})">Abrir mensaje</button></td>
+        <td><button type="button" mat-stroked-button color="primary" (click)="show('Notificaciones pueden incluir alertas, sonidos e insignia en el ícono.', {title: 'Tareas quiere enviarte notificaciones', type:'modal', width: '350px', actions: [{label: 'No permitir', value: 1}, {label: 'Permitir', value: 2, color: 'primary'}]})">Abrir mensaje</button></td>
+        <td><button type="button" mat-stroked-button color="primary" (click)="show('Se ha eliminado el archivo exitosamente.')">Abrir mensaje</button></td>
+      </tr>
+      <tr class="text-center">
+        <th>Modal simple</th>
+        <th>Modal acciones personalidados</th>
+        <th>Notificación</th>
+      </tr>
+    </tbody>
+  </table>
+</div>

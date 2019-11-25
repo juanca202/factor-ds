@@ -1,61 +1,67 @@
 <div class="container p-4 p-md-5">
-  <div class="small text-muted">Guidelines</div>
+  <div class="small text-muted">Lineamientos</div>
   <h1>Color</h1>
-  <p class="lead">La paleta de color refleja un estilo y apariencia unificado y reconocible, el color primario y secundario generalmente refleja la marca y sirven para acentuar elementos. Variaciones claras o oscuras se pueden aplicar a cada color para diferentes elementos de la interfaz.</p>
-  <h2>Color palette</h2>
+  <p class="lead">La paleta de color refleja un estilo y apariencia unificado y reconocible, el color primario y secundario generalmente reflejan la marca y sirven para acentuar elementos. Variaciones claras o oscuras se pueden aplicar a cada color
+    para diferentes elementos de la interfaz.</p>
+
+  <h4 class="my-4">Colores principales</h4>
   <div class="row">
-    <div class="col-sm-6">
-      <div class="mb-2">Primary</div>
-      <table class="table table-bordered text-center"><tr>
-        <td class="swatch-primary">Primary</td>
-      </tr></table>
-      <p>Generalmente se utiliza para botones, enlaces o elementos seleccionados.</p>
+    <div class="col-sm-4">
+      <h5>Primario</h5>
+      <mat-card class="text-center p-2 swatch-primary my-2">Primario</mat-card>
+      <p>El color primario es el que se usa con mayor frecuencia a través de toda la aplicación. Si no se cuenta con un color secundario, el color primario puede tambíen ser usado para acentuar elementos.</p>
     </div>
-    <div class="col-sm-6">
-      <div class="mb-2">Secondary</div>
-      <table class="table table-bordered text-center"><tr>
-        <td class="swatch-secondary">Secondary</td>
-      </tr></table>
-      <p>Generalmente se utiliza para acciones secundarias.</p>
+    <div class="col-sm-4">
+      <h5 class="mb-2">Secundario</h5>
+      <mat-card class="text-center p-2 swatch-secondary my-2">Secundario</mat-card>
+      <p>El color secundario se debe usar moderadamente para acentuar y distinguir elementos de la interfaz de usuario, su uso es opcional y se puede aplicar a botones, resaltar elementos seleccionados o enlaces.</p>
+    </div>
+    <div class="col-sm-4">
+      <h5 class="mb-2">Neutral</h5>
+      <mat-card class="text-center p-2 bg-white my-2">Neutral</mat-card>
+      <p>El color neutral aparece clara y legiblemente contra el color que se encuentra detrás de él, principalmente es blanco, negro o una variante de grís, se puede aplicar a textos, encabezados, separadores, íconos.</p>
     </div>
   </div>
+  <h4 class="my-4">Colores de alerta</h4>
   <div class="row">
-    <div class="col-sm-6">
-      <div class="mb-2">Status</div>
-      <table class="table table-bordered text-center"><tr>
-        <td class="swatch-danger w-25">Danger</td>
-        <td class="swatch-warning w-25">Warning</td>
-        <td class="swatch-success w-25">Success</td>
-        <td class="swatch-info w-25">Info</td>
-      </tr></table>
-      <p>Se utiliza para resaltar el estado de un elemento.</p>
+    <div class="col-sm-3">
+      <h5 class="mb-2">Danger</h5>
+      <mat-card class="text-center p-2 swatch-danger my-2">Danger</mat-card>
     </div>
-    <div class="col-sm-6">
-      <div class="mb-2">Grey scale</div>
-      <table class="table table-bordered text-center"><tr>
-        <td class="swatch-100"><div class="badge badge-light" style="margin-top: 42px; margin-left: -7px; position: absolute;">Light</div>100</td>
-        <td class="swatch-200">200</td>
-        <td class="swatch-300">300</td>
-        <td class="swatch-400">400</td>
-        <td class="swatch-500">500</td>
-        <td class="swatch-600">600</td>
-        <td class="swatch-700">700</td>
-        <td class="swatch-800"><div class="badge badge-dark" style="margin-top: 42px; margin-left: -4px; position: absolute;">Dark</div>800</td>
-        <td class="swatch-900">900</td>
-      </tr></table>
+    <div class="col-sm-3">
+      <h5 class="mb-2">Warning</h5>
+      <mat-card class="text-center p-2 swatch-warning my-2">Warning</mat-card>
+    </div>
+    <div class="col-sm-3">
+      <h5 class="mb-2">Success</h5>
+      <mat-card class="text-center p-2 swatch-success my-2">Success</mat-card>
+    </div>
+    <div class="col-sm-3">
+      <h5 class="mb-2">Info</h5>
+      <mat-card class="text-center p-2 swatch-info my-2">Info</mat-card>
     </div>
   </div>
-  <div class="mb-2">Colors</div>
-  <table class="table table-bordered text-center"><tr>
-    <td class="swatch-blue">Blue</td>
-    <td class="swatch-indigo">Indigo</td>
-    <td class="swatch-purple">Purple</td>
-    <td class="swatch-pink">Pink</td>
-    <td class="swatch-red">Red</td>
-    <td class="swatch-orange">Orange</td>
-    <td class="swatch-yellow">Yellow</td>
-    <td class="swatch-green">Green</td>
-    <td class="swatch-teal">Teal</td>
-    <td class="swatch-cyan">Cyan</td>
-  </tr></table>
+  <h4 class="my-4">Paletas de color</h4>
+  <h4 class="my-4">Estados de interacción</h4>
+  In addition to the enabled-state tokens above, the five other primary interaction states have been defined and tokenized for each default theme. For values between Black and 70, interaction gets lighter, and for values between 60 and White,
+  interaction gets darker.
+
+  <h5>Hover</h5>
+  Hover states have their own tokens. In the IBM default themes, these colors fall outside of the core palette steps and act as “half steps” between two adjacent colors. The White theme shares the same hover value as the Gray 10 theme; the two dark
+  theme backgrounds share a hover value as well.
+
+  <h5>Active</h5>
+  The active state is two full steps lighter for values between 100 and 70 and two full steps darker for values between 60 and 10. For example, the Blue 60 active state is Blue 80. The exception is that White shares the same active state as Gray 10,
+  and Black shares the same active state as Gray 100.
+
+  <h5>Selected</h5>
+  The selected state is one full step lighter for values between 100 and 70, and one full step darker for values between 60 and 10. For example, the Blue 60 selected state is Blue 70. The exception is that White shares the same selected state as
+  Gray 10, and Black shares the same selected state as Gray 100.
+
+  <h5>Focus</h5>
+  The focus state usually appears as a Blue 60 border in the light theme and as a White border in the dark theme.
+
+  <h5>Disabled</h5>
+  Disabled components are unavailable for interaction, so they don’t receive hover or focus and are not subject to WC3 contrast compliance standards. For the dark themes, disabled values are two full steps lighter than their respective background.
+  For light themes, they are two full steps darker. The exception is that the White theme disabled value is Gray 30.
 </div>

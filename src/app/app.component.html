@@ -1,37 +1,33 @@
-<ft-sidenav #sidenav [options]="options" [docked]="true"></ft-sidenav>
-<nav class="navbar navbar-expand-lg navbar-light pl-2 sticky-top">
-  <button class="btn p-2 mr-2" ftRipple (click)="sidenav.toggle()">
-    <ft-icon name="menu" size="2"></ft-icon>
-  </button>
-  <a class="navbar-brand" routerLink="/design-system/"><img src="assets/logo-factor.svg" /></a>
-  <div class="btn-group btn-group-sm mx-auto">
-    <a [routerLink]="book.url" routerLinkActive="active" class="btn btn-outline-primary px-3" style="min-width:140px;" ftRipple *ngFor="let book of books">{{ book.label }}</a>
+<div class="global-navigation mat-elevation-z1">
+  <div class="p-4">
+    <a routerLink="/"><img src="assets/logo-factor.svg" /></a>
   </div>
-  <div class="btn-group btn-group-sm ml-3">
-    <button ftRipple class="btn btn-outline-primary active">EN</button>
-    <button ftRipple class="btn btn-outline-primary">ES</button>
-  </div>
-</nav>
-<div class="content" [ngClass]="{'left-sidenav': sidenav.shown}">
+  <ft-list [items]="menu" iconNameField="icon"></ft-list>
+</div>
+<div class="content">
   <router-outlet></router-outlet>
-  <div class="book-nav">
-    <a class="book-nav-item" ftRipple [routerLink]="bookNavigation.previous.url" *ngIf="bookNavigation.previous; else bookNavItemPlaceholder">
-      <div class="book-name">&nbsp;{{ bookNavigation.previous.bookName }}</div>
+  <div class="local-navigation">
+    <a class="local-navigation__item" matRipple [routerLink]="navigation.previous.url" *ngIf="navigation.previous; else navigationItemPlaceholder">
+      <div class="item__name">&nbsp;{{ navigation.previous.bookName }}</div>
       <div class="d-flex align-items-center justify-content-end">
         <ft-icon class="mr-1" name="angle-left"></ft-icon>
-        <div>{{ bookNavigation.previous.label }}</div>
+        <div>{{ navigation.previous.label }}</div>
       </div>
     </a>
-    <a class="book-nav-item" ftRipple [routerLink]="bookNavigation.next.url" *ngIf="bookNavigation.next; else bookNavItemPlaceholder">
-      <div class="book-name">{{ bookNavigation.next.bookName }}&nbsp;</div>
+    <a class="local-navigation__item" matRipple [routerLink]="navigation.next.url" *ngIf="navigation.next; else navigationItemPlaceholder">
+      <div class="item__name">{{ navigation.next.bookName }}&nbsp;</div>
       <div class="d-flex align-items-center">
-        <div>{{ bookNavigation.next.label }}</div>
+        <div>{{ navigation.next.label }}</div>
         <ft-icon class="ml-1" name="angle-right"></ft-icon>
       </div>
     </a>
   </div>
 </div>
-
-<ng-template #bookNavItemPlaceholder>
-  <div class="book-nav-item"></div>
+<div class="searchbox">
+  <button type="button" mat-button color="primary">
+    <ft-icon name="search" size="2"></ft-icon>
+  </button>
+</div>
+<ng-template #navigationItemPlaceholder>
+  <div class="local-navigation__item"></div>
 </ng-template>

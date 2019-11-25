@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  icons: {
-    metadataPath: 'assets/icons-library/metadata.json'
+  googleTagManager: {
+    trackingCode: 'GTM-KG2R8KJ'
   }
 };

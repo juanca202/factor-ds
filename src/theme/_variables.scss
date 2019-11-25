@@ -1,3 +1,37 @@
-$primary: #6572ee;
-$secondary: #5a616e;
+$font-family-base: 'Quicksand', sans-serif;
 $enable-responsive-font-sizes: true;
+$primary: #47a79c;
+$primary-palette: (
+    50 : #e9f4f3,
+    100 : #c8e5e1,
+    200 : #a3d3ce,
+    300 : #7ec1ba,
+    400 : #63b4ab,
+    500 : #47a79c,
+    600 : #409f94,
+    700 : #37968a,
+    800 : #2f8c80,
+    900 : #207c6e,
+    A100 : #b9fff4,
+    A200 : #86ffec,
+    A400 : #53ffe4,
+    A700 : #3affe0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$secondary: #5a616e;
+$link-hover-decoration: none; 

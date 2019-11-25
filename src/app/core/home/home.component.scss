@@ -1,10 +1,29 @@
-.logo {
-  height: 51px;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  padding-right: 1rem;
-  img {
-    height: 20px;
+@import '../../../theme/variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+.cover {
+  background-color: rgba($primary, 0.05);
+}
+.mat-button-base {
+  border-radius: 100vh;
+}
+.logo-fds {
+  font-size: 1.5rem;
+  border: 2px solid;
+  text-align: center;
+  width: 50px;
+  border-radius: 0.5rem;
+  margin: auto;
+  color: #47a79c;
+}
+.icon-block {
+  text-align: center;
+  ft-icon {
+    background-color: #ecf4f4;
+    border-radius: 100vh;
+    padding: 1rem;
+    width: 104px;
+    color: var(--primary);
   }
 }

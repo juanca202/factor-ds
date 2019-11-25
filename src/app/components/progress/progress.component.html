@@ -1,9 +1,13 @@
 <div class="container p-4 p-md-5">
-  <div class="small text-muted">Components</div>
+  <div class="small text-muted">Componentes</div>
   <h1>Progress</h1>
-  <p class="lead">You can use either the npm or yarn command-line tool to install packages. Use whichever is appropriate for your project in the examples below.</p>
+  <p class="lead">Permite indicar el progreso de una acción en pantalla, pudiendo ser determinada, cuando podemos medir el progreso de esa acción en porcentaje; o indeterminada cuando solo queremos indicar que una acción esta en progreso.</p>
 
-  <h2>Size</h2>
+  <mat-card class="mb-4 p-0 overflow-hidden">
+    <pre><code [highlight]="code" class="p-0 bg-white"></code></pre>
+  </mat-card>
+
+  <h4>Size</h4>
   <table class="table table-bordered"><tr>
     <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="1"></ft-progress></td>
     <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="2"></ft-progress></td>
@@ -12,15 +16,29 @@
     <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="5"></ft-progress></td>
   </tr></table>
 
-  <h2>Mode</h2>
+  <h4>Color</h4>
+  <table class="table table-bordered">
+    <tr>
+      <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="2" color="#FF0000"></ft-progress></td>
+      <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="2" color="var(--blue)"></ft-progress></td>
+      <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="2" color="rgba(0,0,0,.5)"></ft-progress></td>
+    </tr>
+    <tr class="text-center">
+      <th>#FF0000</th>
+      <th>var(--blue)</th>
+      <th>rgba(0,0,0,.5)</th>
+    </tr>
+  </table>
+
+  <h4>Mode</h4>
   <table class="table table-bordered">
     <tr>
       <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="3" mode="determinate" [value]="value"></ft-progress></td>
       <td style="vertical-align: middle;" class="text-center p-3"><ft-progress size="3"></ft-progress></td>
     </tr>
     <tr class="text-center">
-      <th>Determinate</th>
-      <th>Indeterminate</th>
+      <th>Determinada</th>
+      <th>Indeterminada</th>
     </tr>
   </table>
 </div>

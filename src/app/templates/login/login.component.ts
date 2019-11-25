@@ -7,6 +7,7 @@ import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@ang
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  errorMessage: string;
   state: string = 'first-access';
   view: string = 'preview';
   form: FormGroup;
@@ -21,6 +22,9 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+  forgotUser() {
+    
   }
   submit() {
     this.validateAllFormFields(this.form);

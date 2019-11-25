@@ -10,17 +10,19 @@ import { SelectComponent } from './select/select.component';
 import { FilePickerComponent } from './file-picker/file-picker.component';
 import { RatingComponent } from './rating/rating.component';
 import { ProgressComponent } from './progress/progress.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
-  { path: 'design-system/components', component: OverviewComponent },
-  { path: 'design-system/components/icon', component: IconComponent },
-  { path: 'design-system/components/image', component: ImageComponent },
-  { path: 'design-system/components/text-input', component: TextInputComponent },
-  { path: 'design-system/components/text-area', component: TextAreaComponent },
-  { path: 'design-system/components/select', component: SelectComponent },
-  { path: 'design-system/components/file-picker', component: FilePickerComponent },
-  { path: 'design-system/components/rating', component: RatingComponent },
-  { path: 'design-system/components/progress', component: ProgressComponent }
+  { path: 'overview', component: OverviewComponent },
+  { path: 'icon', component: IconComponent },
+  { path: 'image', component: ImageComponent },
+  { path: 'text-input', component: TextInputComponent },
+  { path: 'text-area', component: TextAreaComponent },
+  { path: 'select', component: SelectComponent },
+  { path: 'file-picker', component: FilePickerComponent },
+  { path: 'rating', component: RatingComponent },
+  { path: 'message', component: MessageComponent },
+  { path: 'progress', component: ProgressComponent }
 ];
 
 @NgModule({

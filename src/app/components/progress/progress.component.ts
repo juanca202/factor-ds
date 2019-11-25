@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressComponent implements OnInit {
   value: number = 0;
+  code: string = `
+    <ft-progress size="1"></ft-progress>
+  `;
 
   constructor() { }
 

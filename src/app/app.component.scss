@@ -1,63 +1,67 @@
-@import "variables";
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-.navbar {
-  height: 4rem;
+@import '../theme/variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+$navigation-width: 280px;
+.global-navigation {
   background-color: #FFF;
-  border-bottom: 2px solid $light;
-  .navbar-brand {
-    img {
+  width: $navigation-width;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  ft-list {
+    height: 100vh;
+  }
+}
+.content {
+  margin-left: $navigation-width;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.searchbox {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  .mat-button {
+    backdrop-filter: saturate(50%) blur(5px);
+    box-shadow: 0 0 0 3px #FFF;
+    min-width: 0;
+    border-radius: 100vh;
+    padding: 0.5rem;
+    background-color: rgba($primary, 0.05);
+    @include media-breakpoint-up(md) {
+      box-shadow: 0 0 0 3px $light;
+    }
+    ft-icon {
       display: block;
     }
   }
 }
-ft-sidenav {
-  /deep/.content {
-    @include media-breakpoint-up(md) {
-      margin-top: 4rem;
-      border-right: 2px solid $light;
-      box-shadow: 0 0 !important;
-      background: #FFF;
-    }
-  }
-}
-.content {
+.local-navigation {
+  border-top: 1px solid $input-border-color;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-left: 0;
-  transition: margin-left 0.3s ease-in-out;
-  &.left-sidenav {
-    @include media-breakpoint-up(md) {
-      margin-left: 16rem;
+  margin-top: auto;
+  min-height: fit-content;
+  &__item {
+    flex: 1;
+    padding: 1rem 2rem;
+    &:not(div):hover {
+      background-color: $light;
+      text-decoration: none;
     }
-  }
-  .book-nav {
-    border-top: 1px solid $input-border-color;
-    display: flex;
-    margin-top: auto;
-    min-height: fit-content;
-    .book-nav-item {
-      flex: 1;
-      padding: 1rem 2rem;
-      &:not(div):hover {
-        background-color: $light;
-        text-decoration: none;
-      }
-      &:first-child {
-        border-right: 1px solid $input-border-color;
-        text-align: right;
-        color: $body-color;
-      }
-      &:last-child {
-        font-weight: 500;
-      }
-      .book-name {
-        font-size: 80%;
-        color: #666;
-        font-weight: 300;
-      }
+    &:first-child {
+      border-right: 1px solid $input-border-color;
+      text-align: right;
+      color: $body-color;
+    }
+    &:last-child {
+      font-weight: 500;
+    }
+    .item__name {
+      font-size: 80%;
+      color: #666;
+      font-weight: 300;
     }
   }
 }

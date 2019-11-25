@@ -8,11 +8,11 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
 import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
-  { path: 'design-system/templates', component: OverviewComponent },
-  { path: 'design-system/templates/basic-form', component: BasicFormComponent },
-  { path: 'design-system/templates/login', component: LoginComponent },
-  { path: 'design-system/templates/infinite-scroll', component: InfiniteScrollComponent },
-  { path: 'design-system/templates/calendar', component: CalendarComponent }
+  { path: '', component: OverviewComponent },
+  { path: 'basic-form', component: BasicFormComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'infinite-scroll', component: InfiniteScrollComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 @NgModule({
