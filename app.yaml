@@ -1,0 +1,24 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+env_variables:
+  API_KEY: AIzaSyCaAF9_bSJnp_CPVxjrzSho2C-rtPz407c
+
+handlers:
+
+  - url: /
+    static_files: dist/factor-ds/index.html
+    upload: dist/factor-ds/index.html
+  - url: /
+    static_dir: dist
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
