@@ -1,11 +1,11 @@
 {
-  "name": "factor-ds",
-  "short_name": "factor-ds",
-  "theme_color": "#1976d2",
+  "name": "Factor Design System",
+  "short_name": "Design System",
+  "theme_color": "#FFF",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/design-system/",
+  "start_url": "/design-system/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

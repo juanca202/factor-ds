@@ -73,6 +73,10 @@ export class AppComponent {
         type: 'collapsible',
         children: [
           {
+            label: 'Contenedor de aplicaciones',
+            url: '/components/app-container'
+          },
+          {
             label: 'Introducción',
             url: '/components/overview'
           },
@@ -117,7 +121,7 @@ export class AppComponent {
             url: '/components/toolbar'
           },
           {
-            label: 'Sidesheet',
+            label: 'Sheet',
             url: '/components/sidesheet'
           },
           {
@@ -137,6 +141,10 @@ export class AppComponent {
           {
             label: 'Overview',
             url: '/templates'
+          },
+          {
+            label: 'Maestro',
+            url: '/templates/master'
           },
           {
             label: 'Formulario básico',
